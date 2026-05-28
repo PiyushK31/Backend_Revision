@@ -1,0 +1,16 @@
+{
+  "name": "backend_revision-main",
+  "version": "1.0.0",
+  "description": "A structured backend revision repository covering Node.js, Express.js, APIs, authentication, databases, middleware, REST principles, and backend concepts with practical examples and mini implementations. ## Tech Stack  - Node.js - Express.js - MongoDB - Mongoose - REST API - JWT Authentication - Postman - Git &amp; GitHub .",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
