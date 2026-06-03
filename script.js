@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 
-//middelware setup
+//middelware setup!
 app.use(function(req , res , next){
     console.log("middelware is runnig!");
     //call the next function to move to the next middelware or route handler
