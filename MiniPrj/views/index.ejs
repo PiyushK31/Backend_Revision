@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+</head>
+<body>
+
+    <h1>Create a Task</h1>
+
+    <form action="/create" method="POST">
+        <label>Title</label><br>
+        <input
+            type="text"
+            name="title"
+            placeholder="Title goes here"
+            required
+        >
+        <br><br>
+
+        <label>Task Details</label><br>
+        <textarea
+            name="details"
+            placeholder="Write your task details here"
+            rows="5"
+            cols="30"
+            required
+        ></textarea>
+        <br><br>
+
+        <button
+            type="submit"
+            style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Create Task
+        </button>
+    </form>
+
+    <br><br>
+
+    <div style="background-color: #f0f0f0; padding: 20px; border-radius: 5px;">
+        <h2>Recently Edited Files</h2>
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            <% if (files.length === 0) { %>
+                <p>No task yet.</p>
+            <% } else { %>
+                <% files.forEach(file => { %>
+                    <div style="background: white; padding: 10px; border-radius: 5px;">
+                        <p><%= file %></p>
+                        <a href="/files/<%= file %>">Read more...</a>
+                    </div>
+                <% }) %>
+            <% } %>
+        </div>
+    </div>
+
+</body>
+</html>
