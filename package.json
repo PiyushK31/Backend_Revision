@@ -12,5 +12,14 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.2.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PiyushK31/Backend_Revision.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PiyushK31/Backend_Revision/issues"
+  },
+  "homepage": "https://github.com/PiyushK31/Backend_Revision#readme"
 }

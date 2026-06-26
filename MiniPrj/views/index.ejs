@@ -49,6 +49,9 @@
                     <div style="background: white; padding: 10px; border-radius: 5px;">
                         <p><%= file %></p>
                         <a href="/files/<%= file %>">Read more...</a>
+                        <br></br>
+                        <a href="/Edit/<%= file %>">Edit</a>
+                        <a href="/delete/<%= file %>" style="padding: 5px 10px; margin: 20px; background-color: #f44336; color: white; border: none; border-radius: 5px; cursor: pointer;">Delete</a>
                     </div>
                 <% }) %>
             <% } %>

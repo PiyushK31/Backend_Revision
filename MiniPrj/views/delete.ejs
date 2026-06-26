@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete File</title>
+</head>
+<body>
+    <h1>Are you sure you want to delete <%= filename %>?</h1>
+
+    <textarea readonly rows="10" cols="50"><%= filedata %></textarea>
+
+    <br><br>
+
+    <form action="/delete/<%= filename %>" method="POST">
+        <button type="submit">Yes, Delete</button>
+    </form>
+
+    <br>
+
+    <a href="/">Cancel</a>
+</body>
+</html>
