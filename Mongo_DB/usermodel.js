@@ -8,7 +8,8 @@ mongoose.connect('mongodb://127.0.0.1:27017/mongodbpractice');
 const userSchema = mongoose.Schema({
     name: String,
     username: String,
-    email: String
+    email: String,
+    imageurl: String
 });
 
 //create a model for user and export it to use in other files!
