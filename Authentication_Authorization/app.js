@@ -5,6 +5,7 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 // Import the User model
 const userModle = require('./models/user');
@@ -43,11 +44,37 @@ app.post('/Create', (req, res) => {
                 password: hash, // Store the hashed password instead of the original
                 age
             });
+            
 
+            const token = jwt.sign({ email }, "secretkey");
+            res.cookie("token", token);
             // Send the created user as a response
             res.send(createdUser);
         });
     });
+});
+
+app.get('/Login', (req, res) => {
+    res.render('login');
+});
+
+
+app.post('/Login', async (req, res) =>{
+    let user = await userModle.findOne({email: req.body.email});
+    if(!user) return res.send("email or password is may wrong");
+
+    bcrypt.compare(req.body.password, user.password, function(err, result){
+        if(result){
+            let token = jwt.sign({email: user.email}, "secretkey");
+            res.cookie("token", token);
+            res.send("You are logged in");
+        }
+        else return res.send("email or password is may wrong");
+    });
+});
+app.get('/Logout', (req, res) => {
+    res.clearCookie("token");
+    res.redirect('/');
 });
 
 // Start the server
